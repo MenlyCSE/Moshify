@@ -9,6 +9,7 @@ html {
   --color-headings: #1b0760;
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
+  --color-text-primary: #ffffff;
 }
 
 body {
@@ -72,7 +73,7 @@ a {
 }
 
 .link-arrow::after {
-  content: '-->';
+  content: "-->";
   margin-left: 5px;
   transition: margin 0.15s;
 }
@@ -84,5 +85,38 @@ a {
 @media screen and (min-width: 1024px) {
   .link-arrow {
     font-size: 1.5rem;
+  }
+}
+
+/* Badges */
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+
+.badge--primary {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.badge--secondary {
+  background: var(--color-secondary);
+  color: var(--color-text-primary);
+}
+
+.badge--small {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .badge {
+    font-size: 1.5rem;
+  }
+
+  .badge--small {
+    font-size: 1.2rem;
   }
 }
