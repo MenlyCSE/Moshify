@@ -11,16 +11,17 @@ html {
 }
 
 :root {
+  --border-radius: 30px;
   --color-accent: #ff3400;
   --color-body: #918ca4;
+  --color-border: #cdcbd7;
+  --color-card-background: #f3f3f3;
   --color-headings: #1b0760;
+  --color-icon-background: #f3f9fa;
+  --color-input-border: #ccc;
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-text-primary: #ffffff;
-  --color-icon-background: #f3f9fa;
-  --color-input-border: #ccc;
-  --color-border: #cdcbd7;
-  --border-radius: 30px;
 }
 
 body {
@@ -284,3 +285,28 @@ a {
   }
 }
 
+/* Cards */
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px var(--color-card-background);
+  overflow: hidden;
+}
+
+.card__header,
+.card__body {
+  padding: 2rem 3rem;
+}
+
+.card .card__header {
+  color: var(--color-text-primary);
+}
+
+.card--primary .card__header {
+  background: var(--color-primary);
+}
+
+.card--secondary .card__header {
+  background: var(--color-secondary);
+}
+
+/* Plans */
