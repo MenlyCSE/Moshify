@@ -12,6 +12,7 @@ html {
 
 :root {
   --border-radius: 30px;
+  --box-shadow: 0 0 0 3px #666;
   --color-accent: #ff3400;
   --color-block-background-dark: #000;
   --color-body-dark: #5c5577;
@@ -21,10 +22,12 @@ html {
   --color-headings: #1b0760;
   --color-icon-background: #f3f9fa;
   --color-input-border: #ccc;
+  --color-nav-border: rgb(255, 255, 255, 0.07);
   --color-primary: #2584ff;
   --color-secondary-dark: #02cdf1;
   --color-secondary: #00d9ff;
   --color-text-primary: #ffffff;
+  --color-text-secondary: rgb(255, 255, 255, 0.85);
   --color-text-tertiary: #7b858b;
   --letter-opacity: 0.8;
 }
@@ -630,4 +633,71 @@ a {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+}
+
+/* Navigation Bar */
+.nav {
+  background: var(--color-block-background-dark);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+.nav__item {
+  border-bottom: 1px solid var(--color-nav-border);
+  padding: 0.5rem 2rem;
+}
+
+.nav__item > a {
+  color: var(--color-text-secondary);
+  transition: color 0.3s;
+}
+
+.nav__item > a:hover {
+  color: var(--color-text-primary);
+}
+
+.nav__toggler {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: box-shadow 0.15s;
+}
+
+.nav__toggler:hover {
+  opacity: 0.7;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  opacity: 1;
+}
+
+.nav__brand {
+  transform: translateY(5px);
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__list {
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__item {
+    border: 0;
+  }
 }
