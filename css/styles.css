@@ -13,6 +13,7 @@ html {
 :root {
   --border-radius: 30px;
   --color-accent: #ff3400;
+  --color-block-background-dark: #000;
   --color-body-dark: #5c5577;
   --color-body: #918ca4;
   --color-border: #cdcbd7;
@@ -24,6 +25,7 @@ html {
   --color-secondary-dark: #02cdf1;
   --color-secondary: #00d9ff;
   --color-text-primary: #ffffff;
+  --color-text-tertiary: #7b858b;
   --letter-opacity: 0.8;
 }
 
@@ -548,7 +550,7 @@ a {
   .callout .grid--1x2 {
     grid-template-columns: 1fr auto;
   }
-  
+
   .callout__content {
     text-align: left;
   }
@@ -590,4 +592,42 @@ a {
   display: block;
   max-height: 100vh;
   opacity: 1;
+}
+
+/* Blocks */
+.block {
+  --block-padding-verticle: 6rem;
+  padding: var(--block-padding-verticle) 2rem;
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+.block--dark {
+  background: var(--color-block-background-dark);
+  color: var(--color-text-tertiary);
+}
+
+.block--dark .block__heading {
+  color: var(--color-text-primary);
+}
+
+.block--skewed-right {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  padding: calc(var(--block-padding-verticle) + 4rem);
+}
+
+.block--skewed-left {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  padding: calc(var(--block-padding-verticle) + 4rem);
+}
+
+.block__header {
+  text-align: center;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }
