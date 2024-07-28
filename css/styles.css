@@ -1,3 +1,7 @@
+/* Common Conventions */
+/* Top Left Right Bottom (tlrb) */
+/* Block__element--modifier (BEM) */
+
 /* Universal rules */
 *,
 *::after,
@@ -13,6 +17,7 @@ html {
 :root {
   --border-radius: 30px;
   --box-shadow: 0 0 0 3px #666;
+  --color--hero-tagline: #b9c3cf;
   --color-accent: #ff3400;
   --color-block-background-dark: #000;
   --color-body-dark: #5c5577;
@@ -44,6 +49,7 @@ h2,
 h3 {
   color: var(--color-headings);
   margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
 h1 {
@@ -699,5 +705,32 @@ a {
 
   .nav__item {
     border: 0;
+  }
+}
+
+/* Hero */
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.hero__tagline {
+  font-size: 2rem;
+  color: var(--color--hero-tagline);
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 0;
+  }
+  
+  .hero__content {
+    text-align: left;
+    align-self: center;
   }
 }
