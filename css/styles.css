@@ -34,6 +34,7 @@ html {
   --color-text-primary: #ffffff;
   --color-text-secondary: rgb(255, 255, 255, 0.85);
   --color-text-tertiary: #7b858b;
+  --color-input-shadow: #e6ebee;
   --letter-opacity: 0.8;
 }
 
@@ -732,5 +733,30 @@ a {
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain Block */
+.block-domain .input-group {
+  box-shadow: 0 0 30px 5px var(--color-input-shadow);
+  border: 0;
+  margin: 4rem auto;
+  max-width: 67rem;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-family: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
