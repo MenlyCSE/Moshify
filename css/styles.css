@@ -29,6 +29,7 @@ html {
   --color-input-border: #ccc;
   --color-nav-border: rgb(255, 255, 255, 0.07);
   --color-primary: #2584ff;
+  --color-primary-dark: #126de4;
   --color-secondary-dark: #02cdf1;
   --color-secondary: #00d9ff;
   --color-text-primary: #ffffff;
@@ -126,6 +127,10 @@ a {
 
 .badge--primary {
   background: var(--color-primary);
+}
+
+.badge--primary-dark {
+  background: var(--color-primary-dark);
 }
 
 .badge--secondary {
@@ -351,7 +356,15 @@ a {
   background: var(--color-secondary-dark);
 }
 
+.card--primary .badge--primary {
+  background: var(--color-primary-dark);
+}
+
 /* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
 .plan__name {
   color: var(--color-text-primary);
   font-size: 2.4rem;
@@ -759,4 +772,26 @@ a {
   .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+
+/* Plans Block */
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.plan--popular {
+  transform: scale(1.1);
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
 }
