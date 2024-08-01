@@ -819,3 +819,29 @@ a {
     order: 2;
   }
 }
+
+/* Showcase Block */
+.showcase .grid {
+  gap: 5rem;
+}
+
+.showcase__header {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.showcase .media__title {
+  color: var(--color-text-primary);
+}
+
+.showcase__media {
+  margin-bottom: 25rem;
+}
+
+.showcase__header h2 {
+  color: var(--color-text-primary);
+}
+
+.showcase__image {
+  width: 100%;
+}
