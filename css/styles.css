@@ -39,6 +39,11 @@ html {
   --letter-opacity: 0.8;
 }
 
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
 body {
   color: var(--color-body);
   font-family: Inter, Arial, Helvetica, sans-serif;
@@ -64,6 +69,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -159,7 +165,6 @@ a {
 
 /* Lists */
 .list {
-  color: var(--color-headings);
   list-style: none;
   padding-left: 0;
 }
@@ -170,6 +175,7 @@ a {
 }
 
 .list--tick {
+  color: var(--color-headings);
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
 }
@@ -430,6 +436,7 @@ a {
 /* Media */
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -632,17 +639,19 @@ a {
   color: var(--color-text-tertiary);
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: var(--color-text-primary);
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
   padding: calc(var(--block-padding-verticle) + 4rem);
 }
 
 .block--skewed-left {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
   padding: calc(var(--block-padding-verticle) + 4rem);
 }
 
@@ -723,10 +732,6 @@ a {
 }
 
 /* Hero */
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
-
 .hero__tagline {
   font-size: 2rem;
   color: var(--color--hero-tagline);
@@ -742,7 +747,7 @@ a {
   .hero {
     padding-top: 0;
   }
-  
+
   .hero__content {
     text-align: left;
     align-self: center;
@@ -821,27 +826,21 @@ a {
 }
 
 /* Showcase Block */
-.showcase .grid {
-  gap: 5rem;
-}
-
-.showcase__header {
-  text-align: center;
-  margin-bottom: 7rem;
-}
-
-.showcase .media__title {
-  color: var(--color-text-primary);
-}
-
-.showcase__media {
-  margin-bottom: 25rem;
-}
-
-.showcase__header h2 {
-  color: var(--color-text-primary);
-}
-
-.showcase__image {
+.block-showcase__image > img {
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 70rem;
+  }
 }
