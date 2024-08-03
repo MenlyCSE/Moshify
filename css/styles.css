@@ -24,18 +24,21 @@ html {
   --color-body: #918ca4;
   --color-border: #cdcbd7;
   --color-card-background: #f3f3f3;
+  --color-footer-background: #232323;
+  --color-footer-dividers: #393939;
   --color-headings: #1b0760;
   --color-icon-background: #f3f9fa;
   --color-input-border: #ccc;
+  --color-input-shadow: #e6ebee;
   --color-nav-border: rgb(255, 255, 255, 0.07);
-  --color-primary: #2584ff;
   --color-primary-dark: #126de4;
+  --color-primary: #2584ff;
   --color-secondary-dark: #02cdf1;
   --color-secondary: #00d9ff;
   --color-text-primary: #ffffff;
   --color-text-secondary: rgb(255, 255, 255, 0.85);
   --color-text-tertiary: #7b858b;
-  --color-input-shadow: #e6ebee;
+  --footer-text-dark: #777;
   --letter-opacity: 0.8;
 }
 
@@ -720,11 +723,11 @@ a {
   }
 
   .nav__list {
-    width: auto;
     display: flex;
     font-size: 1.6rem;
     max-height: 100%;
     opacity: 1;
+    width: auto;
   }
 
   .nav__item {
@@ -734,8 +737,8 @@ a {
 
 /* Hero */
 .hero__tagline {
-  font-size: 2rem;
   color: var(--color--hero-tagline);
+  font-size: 2rem;
   letter-spacing: 1px;
   margin: 2rem 0 5rem;
 }
@@ -750,28 +753,28 @@ a {
   }
 
   .hero__content {
-    text-align: left;
     align-self: center;
+    text-align: left;
   }
 }
 
 /* Domain Block */
 .block-domain .input-group {
-  box-shadow: 0 0 30px 5px var(--color-input-shadow);
   border: 0;
+  box-shadow: 0 0 30px 5px var(--color-input-shadow);
   margin: 4rem auto;
   max-width: 67rem;
 }
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 6rem);
   font-family: 2rem;
   font-weight: 600;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
   justify-items: center;
-  max-width: 70rem;
   margin: 0 auto;
+  max-width: 70rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -786,8 +789,8 @@ a {
 }
 
 .block-plans .card {
-  max-width: 500px;
   margin: 0 auto;
+  max-width: 500px;
 }
 
 .plan--popular {
@@ -843,5 +846,82 @@ a {
   .block-showcase__image > img {
     width: auto;
     max-width: 70rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: var(--color-footer-background);
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid var(--color-footer-dividers);
+}
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  /* TODO: consider making general rule for all images */
+  width: 100%;
+  max-width: 23rem;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: var(--color-text-primary);
+  opacity: 0.3;
+}
+
+.footer a {
+  color: var(--footer-text-dark);
+  transition: color 0.3s;
+}
+
+.footer__sections ul {
+  margin: 0;
+}
+
+.footer a:hover {
+  color: var(--color-text-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .footer .collapsible__chevron {
+    display: none;
+  }
+
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+
+  .footer__section {
+    border: none;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
   }
 }
