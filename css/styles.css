@@ -1,7 +1,3 @@
-/* Common Conventions */
-/* Top Left Right Bottom (tlrb) */
-/* Block__element--modifier (BEM) */
-
 /* Universal rules */
 *,
 *::after,
@@ -886,7 +882,6 @@ a {
 }
 
 .footer__brand img {
-  /* TODO: consider making general rule for all images */
   width: 100%;
   max-width: 23rem;
 }
